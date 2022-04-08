@@ -7,15 +7,7 @@ import { Filter, IDataField } from 'ngx-query-builder';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  filter: Partial<Filter> = {
-    filterLevel: 1,
-    id: 1,
-    isGroupTF: true,
-    clause: 'AND',
-    value: null,
-    value2: null,
-    subFilters: []
-  };
+  newConditionList = [];
   dataFieldList: IDataField[] = [
     {
       text: 'Author',
@@ -43,11 +35,15 @@ export class AppComponent {
     console.log('FC', x);
   }
 
-  filterReset(x: any): void {
-    console.log('FR', x);
+  filterReset(): void {
+    console.log('FR');
   }
 
   queryExecuted(x: any): void {
     console.log('QE', x);
+  }
+
+  maxDepthReached(): void {
+    console.log('MDR');
   }
 }
